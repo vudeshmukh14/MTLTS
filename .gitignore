@@ -1,0 +1,23 @@
+*.pyc
+__pycache__
+
+Codes/checkpoints/*
+!Codes/checkpoints/.placeholder
+
+# Codes/outputs/*
+!Codes/outputs/.placeholder
+!Codes/outputs/hyp/.placeholder
+
+data/*
+!data/.placeholder
+!data/features
+!data/gt_summ
+
+
+.DS_Store
+
+Codes/CaTE/src/cate
+Codes/CaTE/*.txt
+
+Codes/CaTE/preprocess/AutoPhrase
+# Codes/CatE/word2vec_100.zip
