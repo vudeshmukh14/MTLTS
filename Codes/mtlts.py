@@ -1025,8 +1025,8 @@ for test_file in files:
 	print('Statistics of training corpus:')
 	print(f'Total non-rumors: {label_dist[0]}, Total rumors: {label_dist[1]}')
 	print(f'Total non-summary-tweets: {summ_label_dist[0]}, Total summary-tweets: {summ_label_dist[1]}')
-	weight_vec[test_file] = torch.tensor(compute_class_weight('balanced', numpy.unique(y), y)).to(device)
-	summ_weight_vec[test_file] = torch.tensor(compute_class_weight('balanced', numpy.unique(summ_y), summ_y)).to(device)
+	weight_vec[test_file] = torch.tensor(compute_class_weight(class_weight = 'balanced', classes = numpy.unique(y), y = y)).to(device)
+	summ_weight_vec[test_file] = torch.tensor(compute_class_weight(class_weight = 'balanced', classes = numpy.unique(summ_y), y = summ_y)).to(device)
 	pos_weight = label_dist[0] / label_dist[1]
 	pos_weight_vec[test_file] = torch.tensor([pos_weight], dtype=torch.float32).to(device)
 	summ_pos_weight = summ_label_dist[0] / summ_label_dist[1]
