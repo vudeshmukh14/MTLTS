@@ -1,0 +1,476 @@
+GPU_ID = 0
+
+MODEL_NAME = BERT
+IN_FEATURES = 768
+OUT_FEATURES = 128
+MODEL_SAVING_POLICY = loss
+VERI_LOSS_FN = nw
+SUMM_LOSS_FN = w
+LAMBDA = 0.7
+DELTA = 0.01
+FLOOD = n
+OPTIM = adam
+L2_REGULARIZER = y
+WEIGHT_DECAY = 0.01
+USE_DROPOUT = n
+NUM_ITERATIONS = 10
+BATCH_SIZE = 16
+LEARNING_RATES = [1e-06, 2e-06, 5e-06, 1e-05]
+TRAINABLE_LAYERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+TEST_FILE = german
+
+SEED = 1955
+
+
+There are 1 GPU(s) available.
+We will use the GPU: Tesla T4
+charliehebdo.txt Training Set Size: 1872, Validation Set Size: 207, Total: 2079
+germanwings-crash.txt Training Set Size: 423, Validation Set Size: 46, Total: 469
+ottawashooting.txt Training Set Size: 801, Validation Set Size: 89, Total: 890
+sydneysiege.txt Training Set Size: 1099, Validation Set Size: 122, Total: 1221
+Test file: charliehebdo.txt
+Statistics of training corpus:
+Total non-rumors: 1221, Total rumors: 1102
+Total non-summary-tweets: 2051, Total summary-tweets: 272
+Verification Class Weight Vector: tensor([0.9513, 1.0540], device='cuda:0', dtype=torch.float64)
+Verification Positive Class Weight Vector: tensor([1.1080], device='cuda:0')
+Summary Class Weight Vector: tensor([0.5663, 4.2702], device='cuda:0', dtype=torch.float64)
+Summary Positive Class Weight Vector: tensor([7.5404], device='cuda:0')
+Test file: germanwings-crash.txt
+Statistics of training corpus:
+Total non-rumors: 2466, Total rumors: 1306
+Total non-summary-tweets: 3334, Total summary-tweets: 438
+Verification Class Weight Vector: tensor([0.7648, 1.4441], device='cuda:0', dtype=torch.float64)
+Verification Positive Class Weight Vector: tensor([1.8882], device='cuda:0')
+Summary Class Weight Vector: tensor([0.5657, 4.3059], device='cuda:0', dtype=torch.float64)
+Summary Positive Class Weight Vector: tensor([7.6119], device='cuda:0')
+Test file: ottawashooting.txt
+Statistics of training corpus:
+Total non-rumors: 2305, Total rumors: 1089
+Total non-summary-tweets: 3000, Total summary-tweets: 394
+Verification Class Weight Vector: tensor([0.7362, 1.5583], device='cuda:0', dtype=torch.float64)
+Verification Positive Class Weight Vector: tensor([2.1166], device='cuda:0')
+Summary Class Weight Vector: tensor([0.5657, 4.3071], device='cuda:0', dtype=torch.float64)
+Summary Positive Class Weight Vector: tensor([7.6142], device='cuda:0')
+Test file: sydneysiege.txt
+Statistics of training corpus:
+Total non-rumors: 2048, Total rumors: 1048
+Total non-summary-tweets: 2760, Total summary-tweets: 336
+Verification Class Weight Vector: tensor([0.7559, 1.4771], device='cuda:0', dtype=torch.float64)
+Verification Positive Class Weight Vector: tensor([1.9542], device='cuda:0')
+Summary Class Weight Vector: tensor([0.5609, 4.6071], device='cuda:0', dtype=torch.float64)
+Summary Positive Class Weight Vector: tensor([8.2143], device='cuda:0')
+
+
+
+Training with LR:  1e-06
+model intialising...
+Downloading: 100% 433/433 [00:00<00:00, 644kB/s]
+Downloading: 100% 436M/436M [00:06<00:00, 64.4MB/s]
+model intialising...
+L2_REGULARIZER = y and WEIGHT_DECAY = 0.01
+Training Set: {'ottawashooting.txt', 'sydneysiege.txt', 'charliehebdo.txt'}
+size of training data 3772
+Size of test data 469
+
+training started....
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  0
+Verifier Training Loss:  tensor(0.6833, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.5694591728525981
+Validation loss:  tensor(0.6937, device='cuda:0')
+Verification Validation accuracy:  0.4880382775119617
+Verification Validation f1 score:  0.4879913913501386
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  1
+Verifier Training Loss:  tensor(0.6584, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.6418345705196182
+Validation loss:  tensor(0.6480, device='cuda:0')
+Verification Validation accuracy:  0.6555023923444976
+Verification Validation f1 score:  0.3959537572254335
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  2
+Verifier Training Loss:  tensor(0.6339, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.6540296924708378
+Validation loss:  tensor(0.6329, device='cuda:0')
+Verification Validation accuracy:  0.6578947368421053
+Verification Validation f1 score:  0.40342332451719154
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  3
+Verifier Training Loss:  tensor(0.6011, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.6675503711558854
+Validation loss:  tensor(0.5778, device='cuda:0')
+Verification Validation accuracy:  0.6770334928229665
+Verification Validation f1 score:  0.46539718630098054
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  4
+Verifier Training Loss:  tensor(0.5527, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.7131495227995758
+Validation loss:  tensor(0.5499, device='cuda:0')
+Verification Validation accuracy:  0.7057416267942583
+Verification Validation f1 score:  0.5628172750695135
+Validation accuracy of the model is  0.7057416267942583
+Validation loss of the model is  tensor(0.5499, device='cuda:0')
+Now Testing: germanwings-crash.txt
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+Speed: 4.13 docs / s
+
+Total Test trees evaluated: 469
+Accuracy: 0.599147
+Precision: 0.837838
+Macro Precision: 0.696134
+Recall: 0.260504
+Macro Recall: 0.604278
+Micro F1 score: 0.397436
+Macro F1 score: 0.548558
+
+
+
+              precision    recall  f1-score   support
+
+           0    0.55443   0.94805   0.69968       231
+           1    0.83784   0.26050   0.39744       238
+
+    accuracy                        0.59915       469
+   macro avg    0.69613   0.60428   0.54856       469
+weighted avg    0.69825   0.59915   0.54630       469
+
+
+
+
+confusion matrix  [[219  12]
+ [176  62]]
+For alpha=0
+
+Summary generated for: german
+Total tweets: 13
+Total verified: 13
+Total later verified: 0
+Summary length with normalized tweets: 253
+Summary length with original tweets: 249
+Summary length with clean tweets: 242
+Verified_Ratio of tweets: 1.0
+Modified verified_Ratio of tweets: 1.0
+
+
+
+
+Metric for:  Original_summary
+Evaluation with Avg
+	rouge-1:	P: 44.48	R: 35.25	F1: 39.33
+	rouge-2:	P: 16.26	R: 12.88	F1: 14.37
+	rouge-l:	P: 48.27	R: 39.76	F1: 43.60
+	rouge-w:	P: 20.96	R:  9.06	F1: 12.65
+
+Evaluation with Best
+	rouge-1:	P: 44.48	R: 35.25	F1: 39.33
+	rouge-2:	P: 16.26	R: 12.88	F1: 14.37
+	rouge-l:	P: 48.27	R: 39.76	F1: 43.60
+	rouge-w:	P: 20.96	R:  9.06	F1: 12.65
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 44.48	R: 35.25	F1: 39.33
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P: 16.26	R: 12.88	F1: 14.37
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 48.27	R: 39.76	F1: 43.60
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 20.96	R:  9.06	F1: 12.65
+
+
+
+
+Metric for:  Cleaned_summary
+Evaluation with Avg
+	rouge-1:	P: 38.43	R: 33.21	F1: 35.63
+	rouge-2:	P:  7.47	R:  6.45	F1:  6.92
+	rouge-l:	P: 42.63	R: 37.75	F1: 40.05
+	rouge-w:	P: 17.26	R:  8.56	F1: 11.45
+
+Evaluation with Best
+	rouge-1:	P: 38.43	R: 33.21	F1: 35.63
+	rouge-2:	P:  7.47	R:  6.45	F1:  6.92
+	rouge-l:	P: 42.63	R: 37.75	F1: 40.05
+	rouge-w:	P: 17.26	R:  8.56	F1: 11.45
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 38.43	R: 33.21	F1: 35.63
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P:  7.47	R:  6.45	F1:  6.92
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 42.63	R: 37.75	F1: 40.05
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 17.26	R:  8.56	F1: 11.45
+
+
+For alpha=0.5
+
+Summary generated for: german
+Total tweets: 13
+Total verified: 11
+Total later verified: 2
+Summary length with normalized tweets: 254
+Summary length with original tweets: 246
+Summary length with clean tweets: 243
+Verified_Ratio of tweets: 0.8461538461538461
+Modified verified_Ratio of tweets: 1.0
+
+
+
+
+Metric for:  Original_summary
+Evaluation with Avg
+	rouge-1:	P: 47.16	R: 38.52	F1: 42.41
+	rouge-2:	P: 16.78	R: 13.70	F1: 15.08
+	rouge-l:	P: 51.23	R: 43.29	F1: 46.92
+	rouge-w:	P: 23.00	R: 10.26	F1: 14.19
+
+Evaluation with Best
+	rouge-1:	P: 47.16	R: 38.52	F1: 42.41
+	rouge-2:	P: 16.78	R: 13.70	F1: 15.08
+	rouge-l:	P: 51.23	R: 43.29	F1: 46.92
+	rouge-w:	P: 23.00	R: 10.26	F1: 14.19
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 47.16	R: 38.52	F1: 42.41
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P: 16.78	R: 13.70	F1: 15.08
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 51.23	R: 43.29	F1: 46.92
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 23.00	R: 10.26	F1: 14.19
+
+
+
+
+Metric for:  Cleaned_summary
+Evaluation with Avg
+	rouge-1:	P: 40.74	R: 35.36	F1: 37.86
+	rouge-2:	P:  7.85	R:  6.81	F1:  7.29
+	rouge-l:	P: 45.32	R: 40.27	F1: 42.64
+	rouge-w:	P: 18.78	R:  9.35	F1: 12.48
+
+Evaluation with Best
+	rouge-1:	P: 40.74	R: 35.36	F1: 37.86
+	rouge-2:	P:  7.85	R:  6.81	F1:  7.29
+	rouge-l:	P: 45.32	R: 40.27	F1: 42.64
+	rouge-w:	P: 18.78	R:  9.35	F1: 12.48
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 40.74	R: 35.36	F1: 37.86
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P:  7.85	R:  6.81	F1:  7.29
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 45.32	R: 40.27	F1: 42.64
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 18.78	R:  9.35	F1: 12.48
+
+
+For alpha=1
+
+Summary generated for: german
+Total tweets: 15
+Total verified: 4
+Total later verified: 5
+Summary length with normalized tweets: 255
+Summary length with original tweets: 249
+Summary length with clean tweets: 239
+Verified_Ratio of tweets: 0.26666666666666666
+Modified verified_Ratio of tweets: 0.6
+
+
+
+
+Metric for:  Original_summary
+Evaluation with Avg
+	rouge-1:	P: 45.08	R: 38.80	F1: 41.70
+	rouge-2:	P: 18.47	R: 15.89	F1: 17.08
+	rouge-l:	P: 50.88	R: 44.90	F1: 47.70
+	rouge-w:	P: 22.77	R: 10.70	F1: 14.56
+
+Evaluation with Best
+	rouge-1:	P: 45.08	R: 38.80	F1: 41.70
+	rouge-2:	P: 18.47	R: 15.89	F1: 17.08
+	rouge-l:	P: 50.88	R: 44.90	F1: 47.70
+	rouge-w:	P: 22.77	R: 10.70	F1: 14.56
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 45.08	R: 38.80	F1: 41.70
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P: 18.47	R: 15.89	F1: 17.08
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 50.88	R: 44.90	F1: 47.70
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 22.77	R: 10.70	F1: 14.56
+
+
+
+
+Metric for:  Cleaned_summary
+Evaluation with Avg
+	rouge-1:	P: 36.40	R: 31.07	F1: 33.53
+	rouge-2:	P:  7.14	R:  6.09	F1:  6.58
+	rouge-l:	P: 42.25	R: 37.03	F1: 39.47
+	rouge-w:	P: 17.71	R:  8.68	F1: 11.65
+
+Evaluation with Best
+	rouge-1:	P: 36.40	R: 31.07	F1: 33.53
+	rouge-2:	P:  7.14	R:  6.09	F1:  6.58
+	rouge-l:	P: 42.25	R: 37.03	F1: 39.47
+	rouge-w:	P: 17.71	R:  8.68	F1: 11.65
+
+Evaluation with Individual
+	Hypothesis #0 & Reference #0: 
+		rouge-1:	P: 36.40	R: 31.07	F1: 33.53
+
+	Hypothesis #0 & Reference #0: 
+		rouge-2:	P:  7.14	R:  6.09	F1:  6.58
+
+	Hypothesis #0 & Reference #0: 
+		rouge-l:	P: 42.25	R: 37.03	F1: 39.47
+
+	Hypothesis #0 & Reference #0: 
+		rouge-w:	P: 17.71	R:  8.68	F1: 11.65
+
+
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  5
+Verifier Training Loss:  tensor(0.5103, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.7494697773064687
+Validation loss:  tensor(0.5031, device='cuda:0')
+Verification Validation accuracy:  0.7535885167464115
+Verification Validation f1 score:  0.6626787323226387
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  6
+Verifier Training Loss:  tensor(0.4833, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.7717391304347826
+Validation loss:  tensor(0.4731, device='cuda:0')
+Verification Validation accuracy:  0.7894736842105263
+Verification Validation f1 score:  0.7301405640167855
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  7
+Verifier Training Loss:  tensor(0.4620, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.7892364793213149
+Validation loss:  tensor(0.4810, device='cuda:0')
+Verification Validation accuracy:  0.80622009569378
+Verification Validation f1 score:  0.7577331759149941
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
+validation started.. 418
+
+Iteration  8
+Verifier Training Loss:  tensor(0.4478, device='cuda:0', grad_fn=<DivBackward0>)
+Verification Training accuracy:  0.8001060445387063
+Validation loss:  tensor(0.4399, device='cuda:0')
+Verification Validation accuracy:  0.8229665071770335
+Verification Validation f1 score:  0.7868816315281797
+train verifier
+train summarizer
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1795: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
+  warnings.warn("nn.functional.tanh is deprecated. Use torch.tanh instead.")
+/usr/local/lib/python3.7/dist-packages/torch/nn/functional.py:1806: UserWarning: nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.
+  warnings.warn("nn.functional.sigmoid is deprecated. Use torch.sigmoid instead.")
+mtlts.py:836: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  clip_grad_norm(net.parameters(), args.max_norm)
