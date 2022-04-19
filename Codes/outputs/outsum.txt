@@ -1,0 +1,92 @@
+             Event            Tweet_ID     User_ID                      Date  \
+0     charliehebdo  552789127792717826   297325085 2015-01-07 11:29:33+00:00   
+1     charliehebdo  552801880812691456   220416676 2015-01-07 12:20:13+00:00   
+2     charliehebdo  553552825431883776  2566535282 2015-01-09 14:04:12+00:00   
+3     charliehebdo  553589055116836864     3108351 2015-01-09 16:28:10+00:00   
+4     charliehebdo  552818821460148226    25049056 2015-01-07 13:27:32+00:00   
+...            ...                 ...         ...                       ...   
+2074  charliehebdo  552851710880653312    26192631 2015-01-07 15:38:14+00:00   
+2075  charliehebdo  552820930419109888   459390022 2015-01-07 13:35:55+00:00   
+2076  charliehebdo  552822566726164481  1704140293 2015-01-07 13:42:25+00:00   
+2077  charliehebdo  552830459273809920    20222791 2015-01-07 14:13:47+00:00   
+2078  charliehebdo  553116149333114880   522285305 2015-01-08 09:09:01+00:00   
+
+                                             Orig_Tweet  \
+0     Just confirmed. 10 people dead at shooting in ...   
+1     Cartoonist Stephane Charbonnier was critically...   
+2     Breaking: Unconfirmed reports of a gunman at t...   
+3     Breaking: Kouachi brothers dead; hostage freed...   
+4     According to #CharlieHebdo's lawyer four well-...   
+...                                                 ...   
+2074  Sad Khartoon! I'm Just a Muslim .. From a Musl...   
+2075  Remember this? Those men died for our right to...   
+2076  Satirizing and mocking religion is sacred. Sta...   
+2077  I am reminded of the words of @stephenfry ... ...   
+2078  #CharlieHebdo will survive. http://t.co/vNV63z...   
+
+                                            Clean_Tweet  \
+0     Just confirmed 10 people dead at shooting in t...   
+1     Cartoonist Stephane Charbonnier was critically...   
+2     Breaking Unconfirmed reports of a gunman at th...   
+3     Breaking Kouachi brothers dead hostage freed a...   
+4     According to CharlieHebdo s lawyer four well k...   
+...                                                 ...   
+2074  Sad Khartoon I am Just a Muslim From a Muslim ...   
+2075  Remember this Those men died for our right to ...   
+2076  Satirizing and mocking religion is sacred Stan...   
+2077        I am reminded of the words of JeSuisCharlie   
+2078                          CharlieHebdo will survive   
+
+                                             Norm_Tweet SR  R1NR0  \
+0     Just confirmed . 10 people dead at shooting in...  S      1   
+1     Cartoonist Stephane Charbonnier was critically...  S      1   
+2     Breaking : Unconfirmed reports of a gunman at ...  S      1   
+3     Breaking : Kouachi brothers dead ; hostage fre...  S      1   
+4     According to #CharlieHebdo 's lawyer four well...  S      1   
+...                                                 ... ..    ...   
+2074  Sad Khartoon ! I 'm Just a Muslim .. From a Mu...  S      0   
+2075  Remember this ? Those men died for our right t...  S      0   
+2076  Satirizing and mocking religion is sacred . St...  S      0   
+2077  I am reminded of the words of @USER ... #JeSui...  S      0   
+2078       #CharlieHebdo will survive . HTTPURL HTTPURL  S      0   
+
+      False0_True1_Unveri2_NR3_Rep4  Situ1_NonSitu0_Oth2  Summary_gt Stance  \
+0                                 1                    1           0   none   
+1                                 0                    1           0   none   
+2                                 0                    0           0   none   
+3                                 1                    1           0   none   
+4                                 2                    1           0   none   
+...                             ...                  ...         ...    ...   
+2074                              3                    0           0   none   
+2075                              3                    0           0   none   
+2076                              3                    0           0   none   
+2077                              3                    0           0   none   
+2078                              3                    0           0   none   
+
+      StanceLabel  New_Summ_gt_Clean  New_Summ_gt_Clean_Situ  New_Summ_gt_BT  \
+0               2                  0                       0               0   
+1               2                  0                       0               0   
+2               2                  0                       0               0   
+3               2                  0                       0               0   
+4               2                  0                       0               0   
+...           ...                ...                     ...             ...   
+2074            2                  0                       0               0   
+2075            2                  0                       0               0   
+2076            2                  0                       0               0   
+2077            2                  0                       0               0   
+2078            2                  0                       0               0   
+
+      New_Summ_gt_BT_Situ  
+0                       0  
+1                       0  
+2                       0  
+3                       0  
+4                       0  
+...                   ...  
+2074                    0  
+2075                    0  
+2076                    0  
+2077                    0  
+2078                    0  
+
+[2079 rows x 18 columns]
